@@ -10,6 +10,14 @@
   justify-content: space-evenly;
   color: white;
   padding: 20px;
+
+  .sortByButton {
+    background-color:rgb(255, 255, 255);
+    border-radius: 5px;
+    width: 70px;
+    padding: 1px;
+    border: none;
+  }
 }
 
 @media (max-width: 600px) {
@@ -31,14 +39,29 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding-top: 20px;
 
   .App-MovieContainer {
     display: flex;
     flex-direction: row;
-    border: solid black 1px;
+    border-radius: 5px;
+    font-size: x-small;
+    width: 200px;
+    background-color:rgb(229, 229, 229);
+    box-shadow: 0px 5px 5px rgba(36, 36, 36, 0.5);
+  }
+  .App-MovieContainer:hover {
+    box-shadow: 0px 0px 20px rgba(36, 36, 36, 0.5);
+    cursor: pointer;
+    transform: scale(1.03);
   }
 }
 
+
 img {
   width: 200px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
