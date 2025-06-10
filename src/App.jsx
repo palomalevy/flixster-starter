@@ -15,9 +15,7 @@ const App = () => {
       <header>
         <Header/>
       </header>
-      <div className="movie-card">
         <MovieCard/>
-      </div>
     </div>
   )
 }
@@ -64,14 +62,16 @@ const MovieCard = () => {
   }, []);
 
   return (
-    <div>
+    <div className="App-MovieCard">
       {movies.map((movie) => (
-        <div key={movie.id}>
-          <h2>{movie.title}</h2>
-          <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
-          {/* <p>{movie.overview}</p> */}
-          <p>Release Date: {movie.release_date}</p>
-          <p>Vote Average: {movie.vote_average}</p>
+        <div className="App-MovieContainer">
+          <div key={movie.id}>
+            <h2>{movie.title}</h2>
+            <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+            {/* <p>{movie.overview}</p> */}
+            <p>Release Date: {movie.release_date}</p>
+            <p>Vote Average: {movie.vote_average}</p>
+          </div>
         </div>
       ))}
     </div>

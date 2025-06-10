@@ -30,9 +30,15 @@
 .App-MovieCard {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+
+  .App-MovieContainer {
+    display: flex;
+    flex-direction: row;
+    border: solid black 1px;
+  }
 }
 
 img {
-  display: flex;
   width: 200px;
 }
