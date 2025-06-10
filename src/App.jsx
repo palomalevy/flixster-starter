@@ -12,8 +12,12 @@ console.log(ViteAUTH);
 const App = () => {
   return (
     <div className="App">
-      {/* <MovieCard/> */}
-      <Header/>
+      <header>
+        <Header/>
+      </header>
+      <div className="movie-card">
+        <MovieCard/>
+      </div>
     </div>
   )
 }
@@ -48,12 +52,31 @@ function SortBy() {
     </div>
   )
 }
+
 // movie card component
-const MovieCard = (props) => {
+const MovieCard = () => {
+  const [movies, setMovies] = useState([]);
+  
+  useEffect(() => {
+    fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${ViteAPI}`)
+      .then(response => response.json())
+      .then(data => setMovies(data.results));
+  }, []);
+
   return (
-    <div className='MovieCard'>
-      <h2>Movie Title: {props.original_title} </h2>
+    <div>
+      {movies.map((movie) => (
+        <div key={movie.id}>
+          <h2>{movie.title}</h2>
+          <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+          {/* <p>{movie.overview}</p> */}
+          <p>Release Date: {movie.release_date}</p>
+          <p>Vote Average: {movie.vote_average}</p>
+        </div>
+      ))}
     </div>
-  )
-}
+  );
+};
+      
+    
 export default App

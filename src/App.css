@@ -26,3 +26,13 @@
     flex-direction: column;
   }
 }
+
+.App-MovieCard {
+  display: flex;
+  flex-direction: row;
+}
+
+img {
+  display: flex;
+  width: 200px;
+}
