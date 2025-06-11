@@ -2,10 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 const ViteAPI = import.meta.env.VITE_API_KEY;
 const ViteAUTH = import.meta.env.VITE_AUTH_KEY;
-import './utils/fetchData.js'
-
-console.log(ViteAPI);
-console.log(ViteAUTH);
+import './utils/fetchData';
 
 const App = () => {
   return (
@@ -14,6 +11,8 @@ const App = () => {
         <Header/>
       </header>
         <MovieCard/>
+        {/* <LoadMoreExample/> */}
+        
     </div>
   )
 }
@@ -51,9 +50,11 @@ function SortBy() {
   )
 }
 // HEADER COMPONENT END
+
 // MOVIE COMPONENT START
 const MovieCard = () => {
   const [movies, setMovies] = useState([]);
+  const [pageNumber, setPageNumber] = useState(1);
   
   useEffect(() => {
     fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${ViteAPI}`)
@@ -61,39 +62,46 @@ const MovieCard = () => {
       .then(data => setMovies(data.results));
   }, []);
 
-  // const openModal = () => { 
-  //   console.log('hello') 
-  // }
-
-  // const [movieModal, setMovieModal] = useState(false)
-  // const visible = () => setMovieModal(true)
-  // const notVisible = () => setMovieModal(false)
+  const [showModal, setShowModal] = useState(false)
+  const [selectedMovie, setSelectedMovie] = useState([])
 
   return (
     // get movies from fetch data file
     // looping through movies using movies.map to get the props
     <div className="App-MovieCard">
       {movies.map((movie) => (
-        // <>
-          <div className="App-MovieContainer">
-            <div key={movie.id}>
+          <div key={movie.id} onClick={() => {
+            console.log('click worked')
+            setShowModal(true)
+            setSelectedMovie(movie)
+          }} className="App-MovieContainer">
+            <div>
               <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
               <h2>{movie.title}</h2>
               <p>Release Date: {movie.release_date}</p>
               <p>Vote Average: {movie.vote_average}</p>
             </div>
           </div>
-          /* <div className={`popup ${modalVisible ? {visible} : {notVisible}}`}>
-            <h2>{movie.title}</h2>
-            <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
-            <p>Release Date: {movie.release_date}</p>
-            <p>Overview: {movie.overview}</p>
-          </div>
-        </> */
       ))}
+      <div className={`popup ${showModal ? "visible" : "notVisible"}`}>
+            <h2>{selectedMovie.title}</h2>
+            <img src={`https://image.tmdb.org/t/p/w500${selectedMovie.poster_path}`} alt={selectedMovie.title} />
+            <p>Release Date: {selectedMovie.release_date}</p>
+            <p>Overview: {selectedMovie.overview}</p>
+            <button onClick={() => setShowModal(false)}>x</button>
+      </div>
+      <div className={`overlay ${showModal ? "visible" : "notVisible"}`}></div>
     </div>
   );
 };
 // MOVIE COMPONENT END
-    
+  
+//LOAD MORE COMPONENT START
+
+// const [pageNumber, setPageNumber] = useState(0);
+
+// fetch (``)
+
+
+//LOAD MORE COMPONENT END
 export default App
