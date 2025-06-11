@@ -1,24 +1,24 @@
 import { useEffect, useState } from "react";
 import PopupModal from "./PopupModal";
-const ViteAPI = import.meta.env.VITE_API_KEY;
 
-const MovieCard = () => {
-  const [movies, setMovies] = useState([]);
-  const [pageNum, setPageNum] = useState(1)
+const MovieCard = ({movies, handleClick}) => {
+//   const [movies, setMovies] = useState([]);
+//   const [pageNum, setPageNum] = useState(1)
   
-  useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${ViteAPI}&page=${pageNum}`)
-      .then(response => response.json())
-      .then(data => setMovies([...movies, ...data.results]))
-  }, [pageNum]);
+//   useEffect(() => {
+//     fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${ViteAPI}&page=${pageNum}`)
+//       .then(response => response.json())
+//       .then(data => setMovies([...movies, ...data.results]))
+//   }, [pageNum]);
 
-   const handleClick = () => {
-      setPageNum((pageNum) => {return pageNum + 1})
-    }
 
   const [showModal, setShowModal] = useState(false)
   const [selectedMovie, setSelectedMovie] = useState({})
    
+  const toggleClick = () => {
+    handleClick()
+  };
+  
   return (
     // get movies from fetch data file
     // looping through movies using movies.map to get the props
@@ -43,7 +43,7 @@ const MovieCard = () => {
         selectedMovie={selectedMovie}
         showModal={showModal}
       />
-      <button className="loadButton" type="button" onClick={handleClick}>Load More</button>
+      <button className="loadButton" type="button" onClick={toggleClick}>Load More</button>
     </div>
   );
 };

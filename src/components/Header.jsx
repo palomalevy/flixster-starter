@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <div className="App-header">
       <h1>Flixster</h1>
-      <SearchFunction/>
+      {/* <SearchFunction/> */}
       <SortBy/>
     </div>
   )
