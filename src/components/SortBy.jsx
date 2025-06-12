@@ -1,9 +1,19 @@
+import { useState } from 'react'
+// SORT BY COMPONENT START
+function SortBy( {sortMovies} ) {
 
-function SortBy() {
+    const [sortValue, setSortValue] = useState('')
+
+    const handleSort = (event) => {
+        setSortValue(event.target.value)
+        sortMovies(event.target.value);
+    }
+
+
   return (
     <div>
-      <select className="sortByButton" name='Sort By'>
-        <option value='Sort By:'>Sort By</option>
+      <select onChange={handleSort} value={sortValue}className="sortByButton" name='Sort By'>
+        <option value='' disabled selected>Sort By</option>
         <option value='A-Z'>Ttile (A-Z)</option>
         <option value='Date'>Newest</option>
         <option value='Rating'>Rating</option>
@@ -13,3 +23,5 @@ function SortBy() {
 };
 
 export default SortBy;
+
+// SORT BY COMPONENT END

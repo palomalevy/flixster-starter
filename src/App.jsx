@@ -4,13 +4,13 @@ import './utils/fetchData';
 import Header from './components/Header';
 import MovieCard from './components/MovieCard';
 import SearchFunction from './components/SearchFunction';
+import SortBy from "./components/SortBy"
 
 const App = () => {    
   const [movies, setMovies] = useState([]);    
   const [pageNum, setPageNum] = useState(1)
 
   const handleClick = () => {
-    console.log('i was here')
       setPageNum((pageNum) => {return pageNum + 1})
     };
 
@@ -31,11 +31,25 @@ const App = () => {
       setMovies(movies);
     };
 
+  const sortMovies = (type) => {
+    if (type === 'Rating') {
+      const currentMovies = [...movies].sort((a, b) => b.vote_average - a.vote_average)
+      setMovies(currentMovies);
+    } else if (type === "A-Z") {
+      const currentMovies = [...movies].sort((a, b) => a.title.localeCompare(b.title))
+      setMovies(currentMovies);
+    } else if (type === "Date") {
+      const currentMovies = [...movies].sort((a, b) => new Date(b.release_date) - new Date(a.release_date))
+      setMovies(currentMovies);
+    }
+  }
+
   return (
     <div className="App">
       <header>
         <Header/>
         <SearchFunction fetchMovies={fetchMovies}/>
+        <SortBy sortMovies={sortMovies}/>
       </header>
         <MovieCard movies={movies} handleClick={handleClick}/>
     </div>

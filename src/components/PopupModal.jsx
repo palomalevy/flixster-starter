@@ -8,6 +8,7 @@ const PopupModal = ( {showModal, selectedMovie, setShowModal} ) => {
             <img src={`https://image.tmdb.org/t/p/w500${selectedMovie.poster_path}`} alt={selectedMovie.title} />
             <p>Release Date: {selectedMovie.release_date}</p>
             <p>Overview: {selectedMovie.overview}</p>
+            <p>Run Time: {}</p>
             <button onClick={() => setShowModal(false)}>x</button>
       </div>
       <div className={`overlay ${showModal ? "visible" : "notVisible"}`}></div>

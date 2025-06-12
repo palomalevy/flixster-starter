@@ -1,14 +1,15 @@
 import SearchFunction from "./SearchFunction"
-import SortBy from "./SortBy"
+
+// HEADER COMPONENT START
 
 const Header = () => {
   return (
     <div className="App-header">
       <h1>Flixster</h1>
-      {/* <SearchFunction/> */}
-      <SortBy/>
     </div>
   )
 }
 
 export default Header
+
+// HEADER COMPONENT END
