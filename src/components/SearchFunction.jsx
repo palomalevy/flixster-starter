@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 
 // SEARCH FORM COMPONENT START
 
-const SearchFunction = ({fetchMovies}) => {
+const SearchFunction = ({fetchMovies, onClearing}) => {
     const [userInput, setUserInput] = useState('')
 
     const handleTextChange = (event) => {
@@ -17,11 +17,16 @@ const SearchFunction = ({fetchMovies}) => {
         };
     };
 
+    const handleReset = () => {
+        setUserInput('');
+        onClearing();
+    }
+
     return (
         <div className='buttons'>
             <input  type='text' onChange={handleTextChange} onKeyDown={handleKeyDown} placeholder='Search for movies' value={userInput}/>
             <button onClick={() => fetchMovies(1, userInput)} className='Submit'>Submit</button>
-            <button className='Clear'>Clear</button>
+            <button onClick={handleReset} className='Clear'>Clear</button>
         </div>
         )
 };
@@ -29,5 +34,3 @@ const SearchFunction = ({fetchMovies}) => {
 export default SearchFunction;
 
 // SEARCH FORM COMPONENT END
-
-// onKeyDown={handleKeyDown} onChange={handleTextChange}
