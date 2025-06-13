@@ -61,8 +61,14 @@ const App = () => {
     <div className="App">
       <header>
         <Header/>
-        <SearchFunction fetchMovies={fetchMovies} onClearing={onClearing}/>
-        <SortBy sortMovies={sortMovies}/>
+        <div className='banner'>
+          <div className='searchButton'>
+            <SearchFunction fetchMovies={fetchMovies} onClearing={onClearing}/>
+          </div>
+          <div className='sortButton'>
+            <SortBy sortMovies={sortMovies}/>
+          </div>
+        </div>
       </header>
         <MovieCard movies={movies} handleClick={handleClick}/>
     </div>

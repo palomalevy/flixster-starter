@@ -26,9 +26,8 @@ const PopupModal = ( {showModal, selectedMovie, setShowModal, movieIdInfo, movie
   return (
     <>
     <div className={`popup ${showModal ? "visible" : "notVisible"}`}>
-            <h2>{selectedMovie.title}</h2>
+            <h2 className='popupHeader'>{selectedMovie.title}</h2>
             <button className='closeButton' onClick={() => setShowModal(false)}>x</button>
-
             <div className='leftAndRight'>
                 <div className='left'></div>
                     <img src={`https://image.tmdb.org/t/p/w500${selectedMovie.poster_path}`} alt={selectedMovie.title} />
@@ -39,7 +38,12 @@ const PopupModal = ( {showModal, selectedMovie, setShowModal, movieIdInfo, movie
                     <p>Overview: {selectedMovie.overview}</p>
                 </div>
             </div>
-            {video.length && <iframe width="560" height="315" src={`https://www.youtube.com/embed/${video[0].key}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>}
+            <div className='trailer'>
+                <h3>Watch Trailer:</h3>
+                <div className='videoScreen'>
+                    {video.length && <iframe width="560" height="315" src={`https://www.youtube.com/embed/${video[0].key}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>}
+                </div>
+            </div>
       </div>
       <div className={`overlay ${showModal ? "visible" : "notVisible"}`}></div>
     </>

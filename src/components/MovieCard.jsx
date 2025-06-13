@@ -38,38 +38,38 @@ const MovieCard = ({movies, handleClick}) => {
     
     return (
         <div className="App-MovieCard">
-        {movies.map((movie) => (
-            <div key={movie.id} onClick={() => {
-                setShowModal(true)
-                setSelectedMovie(movie)
-            }} className="App-MovieContainer">
-                <div>
-                <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
-                <h2>{movie.title}</h2>
-                <p>Vote Average: {movie.vote_average}</p>
-                <button 
-                    className='favoriteButton'
-                    onClick={() => {
-                        if (likedMovies.includes(movie.id)) {
-                            setLikedMovies(likedMovies.filter(id => id != movie.id));
-                        } else {
-                            setLikedMovies([...likedMovies, ...movie]);
-                        }
-                    }}
-                    >
-                        {likedMovies.includes(movie.id) ? '⭐' : '🌟'}
-                    </button>
+            {movies.map((movie) => (
+                <div key={movie.id} onClick={() => {
+                    setShowModal(true)
+                    setSelectedMovie(movie)
+                }} className="App-MovieContainer">
+                    <div>
+                    <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+                    <h2>{movie.title}</h2>
+                    <p>Vote Average: {movie.vote_average}</p>
+                    <button 
+                        className='favoriteButton'
+                        onClick={() => {
+                            if (likedMovies.includes(movie.id)) {
+                                setLikedMovies(likedMovies.filter(id => id != movie.id));
+                            } else {
+                                setLikedMovies([...likedMovies, ...movie]);
+                            }
+                        }}
+                        >
+                            {likedMovies.includes(movie.id) ? '⭐' : '🌟'}
+                        </button>
+                    </div>
                 </div>
-            </div>
-        ))}
-        <PopupModal
-            setShowModal={setShowModal}
-            selectedMovie={selectedMovie}
-            showModal={showModal}
-            movieIdInfo={movieIdInfo}
-            movieVideoInfo={movieVideoInfo}
-        />
-        <button className="loadButton" type="button" onClick={toggleClick}>Load More</button>
+            ))}
+            <PopupModal
+                setShowModal={setShowModal}
+                selectedMovie={selectedMovie}
+                showModal={showModal}
+                movieIdInfo={movieIdInfo}
+                movieVideoInfo={movieVideoInfo}
+            />
+            <button className="loadButton" type="button" onClick={toggleClick}>Load More</button>
         </div>
     );
 };

@@ -23,10 +23,12 @@ const SearchFunction = ({fetchMovies, onClearing}) => {
     }
 
     return (
-        <div className='buttons'>
-            <input  type='text' onChange={handleTextChange} onKeyDown={handleKeyDown} placeholder='Search for movies' value={userInput}/>
-            <button onClick={() => fetchMovies(1, userInput)} className='Submit'>Submit</button>
-            <button onClick={handleReset} className='Clear'>Clear</button>
+        <div>
+            <div className='buttons'>
+                <input  className='searchBar' type='text' onChange={handleTextChange} onKeyDown={handleKeyDown} placeholder='Search for movies...' value={userInput}/>
+                <button onClick={() => fetchMovies(1, userInput)} className='Submit'>Submit</button>
+                <button onClick={handleReset} className='Clear'>x</button>
+            </div>
         </div>
         )
 };
