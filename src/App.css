@@ -111,6 +111,7 @@
     width: 200px;
     background-color: #EBF5EE;
     box-shadow: 0px 5px 5px rgba(36, 36, 36, 0.5);
+    transition: all 0.3s ease;
   }
   .App-MovieContainer:hover {
     box-shadow: 0px 0px 20px rgba(36, 36, 36, 0.5);
