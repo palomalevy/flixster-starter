@@ -100,7 +100,7 @@ Deployed Application (**required**): [Flixster Deployed Site](https://flixster-s
 
 ### Walkthrough Video
 
-`https://www.loom.com/share/a682209ab3fc4b10bd28424bd7d18bf6?sid=1899f149-ab0d-46d1-85f1-eb82000fd67a`
+https://www.loom.com/share/a682209ab3fc4b10bd28424bd7d18bf6?sid=1899f149-ab0d-46d1-85f1-eb82000fd67a
 
 ### Reflection
 
@@ -127,5 +127,5 @@ I would like to give an extra thanks or shout-out to the following people for be
 - Greg (TA)
 - Tabitha (TA)
 - Elikem (TA)
-- Oscar Andres Portillo (Cohort 2)
+- Oscar Andres Portillo (Cohort 1)
 - Pedro Rabadan Ribeiro (Cohort 3)
