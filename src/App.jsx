@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
+import './components/PopupModal.css'
 import Header from './components/Header';
 import MovieCard from './components/MovieCard';
 import SearchFunction from './components/SearchFunction';
