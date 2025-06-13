@@ -1,7 +1,5 @@
 import SearchFunction from "./SearchFunction"
 
-// HEADER COMPONENT START
-
 const Header = () => {
   return (
     <div className="App-header">
@@ -11,5 +9,3 @@ const Header = () => {
 }
 
 export default Header
-
-// HEADER COMPONENT END

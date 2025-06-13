@@ -1,5 +1,5 @@
 import { useState } from 'react'
-// SORT BY COMPONENT START
+
 function SortBy( {sortMovies} ) {
 
     const [sortValue, setSortValue] = useState('')
@@ -23,5 +23,3 @@ function SortBy( {sortMovies} ) {
 };
 
 export default SortBy;
-
-// SORT BY COMPONENT END

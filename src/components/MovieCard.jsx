@@ -7,7 +7,6 @@ const MovieCard = ({movies}) => {
 
   const [showModal, setShowModal] = useState(false)
   const [selectedMovie, setSelectedMovie] = useState({})
-  const [likedMovies, setLikedMovies] = useState([])
   const [movieIdInfo, setMovieIdInfo] = useState({});
   const [movieVideoInfo, setMovieVideoInfo] = useState([]);
    

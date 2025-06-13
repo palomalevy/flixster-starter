@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
 
-// SEARCH FORM COMPONENT START
-
 const SearchFunction = ({fetchMovies, onClearing}) => {
     const [userInput, setUserInput] = useState('')
 
@@ -35,4 +33,3 @@ const SearchFunction = ({fetchMovies, onClearing}) => {
 
 export default SearchFunction;
 
-// SEARCH FORM COMPONENT END

@@ -18,18 +18,15 @@ const App = () => {
   const ViteAPI = import.meta.env.VITE_API_KEY;
   useEffect(() => {
     if(pageNum === 0) {
-      console.log("clearing...");
       setPageNum(1)
       return;
     }
-    console.log('calling use effect')
     fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${ViteAPI}&page=${pageNum}`)
       .then(response => response.json())
       .then(data => setMovies([...movies, ...data.results]))
   }, [pageNum]);
 
     const fetchMovies = async (currentPage, search = '') => {
-      console.log("search term:", search)
       const searchURL = `https://api.themoviedb.org/3/search/movie?api_key=${ViteAPI}&query=${search}&page=${currentPage}`;
       const response = await fetch(searchURL);
       const data = await response.json();
