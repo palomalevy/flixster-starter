@@ -30,12 +30,12 @@ const PopupModal = ( {showModal, selectedMovie, setShowModal, movieIdInfo, movie
             <button className='closeButton' onClick={() => setShowModal(false)}>x</button>
             <div className='leftAndRight'>
                 <div className='left'></div>
-                    <img src={`https://image.tmdb.org/t/p/w500${selectedMovie.poster_path}`} alt={selectedMovie.title} />
+                    <img src={`https://image.tmdb.org/t/p/w500${movieIdInfo.backdrop_path}`} alt={selectedMovie.title} />
                 <div className='right'>
-                    <p>Release Date: {selectedMovie.release_date}</p>
-                    <p>Genres: {genres} </p>
-                    <p>Run Time: {movieIdInfo.runtime} minutes</p>
-                    <p>Overview: {selectedMovie.overview}</p>
+                    <p><strong>Release Date: </strong> {selectedMovie.release_date}</p>
+                    <p><strong>Genres: </strong> {genres} </p>
+                    <p><strong>Run Time: </strong> {movieIdInfo.runtime} minutes</p>
+                    <p><strong>Overview: </strong>{selectedMovie.overview}</p>
                 </div>
             </div>
             <div className='trailer'>

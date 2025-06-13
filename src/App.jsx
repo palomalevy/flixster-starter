@@ -70,7 +70,15 @@ const App = () => {
           </div>
         </div>
       </header>
+      <div className='body'>
         <MovieCard movies={movies} handleClick={handleClick}/>
+      </div>
+      <div className='loadButton'>
+        <button type="button" onClick={handleClick}>Load More</button>
+      </div>
+      <footer className='footer'>
+        <p>Paloma Levy</p>
+      </footer>
     </div>
   )
 }

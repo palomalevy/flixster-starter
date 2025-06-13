@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import PopupModal from "./PopupModal";
+import LikeButton from "./LikeButton";
+import WatchedButton from "./WatchedButton";
 
-const MovieCard = ({movies, handleClick}) => {
+const MovieCard = ({movies}) => {
 
   const [showModal, setShowModal] = useState(false)
   const [selectedMovie, setSelectedMovie] = useState({})
@@ -15,10 +17,6 @@ const MovieCard = ({movies, handleClick}) => {
             fetchVideoData(selectedMovie.id)
         };
     }, [selectedMovie]);
-  
-  const toggleClick = () => {
-        handleClick();
-    };
 
     const fetchMovieData = async (movieID) => {
         const idURL = `https://api.themoviedb.org/3/movie/${movieID}?api_key=${import.meta.env.VITE_API_KEY}`;
@@ -40,25 +38,17 @@ const MovieCard = ({movies, handleClick}) => {
         <div className="App-MovieCard">
             {movies.map((movie) => (
                 <div key={movie.id} onClick={() => {
-                    setShowModal(true)
-                    setSelectedMovie(movie)
-                }} className="App-MovieContainer">
+                        setShowModal(true)
+                        setSelectedMovie(movie)
+                    }} className="App-MovieContainer">
                     <div>
-                    <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
-                    <h2>{movie.title}</h2>
-                    <p>Vote Average: {movie.vote_average}</p>
-                    <button 
-                        className='favoriteButton'
-                        onClick={() => {
-                            if (likedMovies.includes(movie.id)) {
-                                setLikedMovies(likedMovies.filter(id => id != movie.id));
-                            } else {
-                                setLikedMovies([...likedMovies, ...movie]);
-                            }
-                        }}
-                        >
-                            {likedMovies.includes(movie.id) ? '⭐' : '🌟'}
-                        </button>
+                        <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+                        <h2>{movie.title}</h2>
+                        <p>Vote Average: {movie.vote_average}</p>
+                        <div className='userButtons'>
+                            <LikeButton handleLikeButton={(movieIdInfo) => handleLikeButton(movieIdInfo)} movieId={movie.id} />
+                            <WatchedButton handleWatchedButton={(movieIdInfo) => handleWatchButton(movieIdInfo)} movieId={movie.id} />  
+                        </div>
                     </div>
                 </div>
             ))}
@@ -69,7 +59,6 @@ const MovieCard = ({movies, handleClick}) => {
                 movieIdInfo={movieIdInfo}
                 movieVideoInfo={movieVideoInfo}
             />
-            <button className="loadButton" type="button" onClick={toggleClick}>Load More</button>
         </div>
     );
 };

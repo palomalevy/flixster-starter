@@ -3,7 +3,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #ffd6d6;
+  background-color: #7e8a92;
   padding: 20px;
   border: none;
   border-radius: 5px;
@@ -19,7 +19,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
   z-index: 9;
 }
 .visible {
@@ -27,6 +28,7 @@
   flex-wrap: wrap;
   justify-content: center;
   overflow: scroll;
+
     .popupHeader {
         position:fixed;
         justify-content: center;
@@ -34,7 +36,7 @@
     .closeButton {
         display: flex;
         padding-left: 750px;
-        color: #aaa;
+        color: #191923;
         background-color: transparent;
         font-size: x-large;
         border: none;
@@ -59,8 +61,12 @@
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
-        text-align: left;
         padding-top: 10px;
+    }
+
+    img {
+        width: 500px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     }
   }
 }
@@ -72,24 +78,30 @@
     img {
         width: 200px;
     }
-    .videoScreen {
-        width: auto;
+    iframe {
+        width: 250px;
         height: auto;
+    }
+    .popup {
+        width: 300px;
     }
     .visible {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         overflow: scroll;
+        align-items: center;
 
             .popupHeader {
-                position:fixed;
+                display: flex;
                 justify-content: center;
+                margin-bottom: 500px;
+                padding-bottom: 20px;
             }
             .closeButton {
                 display: flex;
-                padding-left: 750px;
-                color: #aaa;
+                padding-left: 270px;
+                color: #141414;
                 background-color: transparent;
                 font-size: x-large;
                 border: none;
@@ -108,17 +120,17 @@
                 gap: 20px;
                 padding: 20px;
 
+                img {
+                    width: 300px;
+                }
+
                 .right {
                     display: flex;
                     flex-wrap: wrap;
                     flex-direction: column;
-                    text-align: left;
+                    text-align: center;
                     padding-top: 10px;
                 }
             }
     }
-}
-
-img {
-    width: 200px;
 }
