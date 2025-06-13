@@ -3,13 +3,14 @@
 }
 
 .App-header {
-  background-color: #141414;
+  background-color: #031927;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
   color: white;
-  padding: 10px;
+  padding-top: 5px;
+  font-size: large;
 
   .sortByButton {
     background-color:rgb(191, 191, 191);
@@ -25,10 +26,10 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 800px;
-  padding: 10px;
-  background-color: aquamarine;
-  background: linear-gradient(to right, #8B786D, #D5CFC6);
+  gap: 20px;
+  padding-bottom: 10px;
+  background-color: #031927;
+  /* background: linear-gradient(to right, #8B786D, #D5CFC6); */
   font-family: Georgia, Times, 'Times New Roman', serif;
 
   .searchBar {
@@ -42,21 +43,21 @@
     border-radius: 7px;
     padding: 5px;
     font-size: small;
-    color: white;
+    color: black;
     font-family: Georgia, Times, 'Times New Roman', serif;
-    background-color: #141414;
+    background-color: #dfdfdf;
   }
   .Clear {
     border-radius: 7px;
     font-size: small;
-    color: white;
+    color: black;
     font-family: Georgia, Times, 'Times New Roman', serif;
-    background-color: #141414;
+    background-color: #dfdfdf;
   }
 
   .sortByButton {
-    background-color: #141414;
-    color: #dfdfdf;
+    background-color: #dfdfdf;
+    color: black;
     border-radius: 7px;
     font-family: Georgia, Times, 'Times New Roman', serif;
     width: 90px;
@@ -92,7 +93,8 @@
 }
 
 .body {
-  background-color: #8C99A2;
+    background: linear-gradient(to top, #031927 50%, rgba(51, 51, 51, 0)) no-repeat;
+
 }
 .App-MovieCard {
   display: flex;
@@ -114,6 +116,14 @@
     box-shadow: 0px 0px 20px rgba(36, 36, 36, 0.5);
     cursor: pointer;
     transform: scale(1.03);
+  }
+  .voteAverage {
+    font-size: small;
+    background-color:#031927;
+    color: white;
+    margin-right: 50px;
+    margin-left: 50px;
+    border-radius: 5px;
   }
 }
 
@@ -142,14 +152,16 @@
   justify-content: center;
   align-items: center;
   padding: 12px;
-  background-color: #8C99A2;
+  background-color: #031927;
 
   button {
     padding: 8px;
-    background-color: #141414;
+    background-color: #EBF5EE;
     border-radius: 10px;
     justify-content: center;
     align-items: center;
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
   }
 }
 
@@ -159,7 +171,7 @@
 }
 
 .footer {
-  background-color: #141414;
+  background-color: #031927;
   margin-bottom: 0;
   bottom: 0;
   color: white;

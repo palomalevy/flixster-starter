@@ -77,7 +77,8 @@ const App = () => {
         <button type="button" onClick={handleClick}>Load More</button>
       </div>
       <footer className='footer'>
-        <p>Paloma Levy</p>
+        <p>© 2025 Flixster. All Rights Reserved.</p>
+        <p>Created By: Paloma Levy</p>
       </footer>
     </div>
   )

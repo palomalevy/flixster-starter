@@ -3,13 +3,13 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #7e8a92;
+  background-color: #afb8be;
   padding: 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   width: 80%;
-  max-width: 800px;
+  max-width: 600px;
   max-height: 600px;
   z-index: 10;
 }
@@ -35,7 +35,7 @@
     }
     .closeButton {
         display: flex;
-        padding-left: 750px;
+        padding-left: 550px;
         color: #191923;
         background-color: transparent;
         font-size: x-large;

@@ -13,7 +13,7 @@ function SortBy( {sortMovies} ) {
   return (
     <div>
       <select onChange={handleSort} value={sortValue}className="sortByButton" name='Sort By'>
-        <option value='' selected>Sort By</option>
+        <option value='' selected><strong>Sort By</strong></option>
         <option value='A-Z'>Ttile (A-Z)</option>
         <option value='Date'>Newest</option>
         <option value='Rating'>Rating</option>

@@ -44,7 +44,7 @@ const MovieCard = ({movies}) => {
                     <div>
                         <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
                         <h2>{movie.title}</h2>
-                        <p>Vote Average: {movie.vote_average}</p>
+                        <p className='voteAverage'>⭐ {movie.vote_average}</p>
                         <div className='userButtons'>
                             <LikeButton handleLikeButton={(movieIdInfo) => handleLikeButton(movieIdInfo)} movieId={movie.id} />
                             <WatchedButton handleWatchedButton={(movieIdInfo) => handleWatchButton(movieIdInfo)} movieId={movie.id} />  
